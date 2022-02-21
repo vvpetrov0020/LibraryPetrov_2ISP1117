@@ -108,5 +108,20 @@ namespace LibraryPetrov_2ISP1117.Windows
             Filter();
         }
 
+        private void BookList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var editBook = new EF.Book();
+
+            if (BookList.SelectedItem is EF.Book)
+            {
+                editBook = BookList.SelectedItem as EF.Book;
+            }
+            AddBookWindow editBookWindow = new AddBookWindow(editBook);
+            this.Opacity = 0.2;
+            editBookWindow.ShowDialog();
+            this.Opacity = 1;
+            Filter();
+
+        }
     }
 }

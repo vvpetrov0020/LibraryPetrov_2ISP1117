@@ -36,7 +36,7 @@
         <Button x:Name="btnUserList"
                 Grid.Row="1"
                 FontSize="17"
-                Content="Список пользователей"
+                Content="Список читателей"
                 Margin="64,68.6,64,71.8"
                 Background="LightSalmon"
                 Click="btnUserList_Click" Grid.Column="1"/>

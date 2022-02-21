@@ -48,7 +48,7 @@
         <ListView x:Name="BookList"
                   Grid.Row="3"
                   KeyUp="BookList_KeyUp"
-                  >
+                  MouseDoubleClick="BookList_MouseDoubleClick">
             <ListView.View >
                 <GridView >
                     <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
