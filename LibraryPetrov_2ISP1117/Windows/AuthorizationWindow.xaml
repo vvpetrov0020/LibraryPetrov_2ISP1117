@@ -43,6 +43,7 @@
                 Content="Submit"
                 FontSize="20"
                 Margin="150,15,149,13"
-                Background="LightSalmon"/>
+                Background="LightSalmon"
+                Click="btnSubmit_Click"/>
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LibraryPetrov_2ISP1117.Windows;
 
 namespace LibraryPetrov_2ISP1117
 {
@@ -23,6 +24,7 @@ namespace LibraryPetrov_2ISP1117
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void btnBookIssue_Click(object sender, RoutedEventArgs e)
@@ -32,7 +34,15 @@ namespace LibraryPetrov_2ISP1117
 
         private void btnUserList_Click(object sender, RoutedEventArgs e)
         {
+            UserListWindow userListWindow = new UserListWindow();
+            userListWindow.Show();
+            
+        }
 
+        private void btnBookList_Click(object sender, RoutedEventArgs e)
+        {
+            BookListWindow bookListWindow = new BookListWindow();
+            bookListWindow.Show();
         }
     }
 }
