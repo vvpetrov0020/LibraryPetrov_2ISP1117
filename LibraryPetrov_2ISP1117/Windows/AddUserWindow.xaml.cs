@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LibraryPetrov_2ISP1117.ClassHelper;
+using Microsoft.Win32;
 
 namespace LibraryPetrov_2ISP1117.Windows
 {
@@ -23,6 +25,8 @@ namespace LibraryPetrov_2ISP1117.Windows
         EF.Client editClient = new EF.Client();
 
         bool isEdit = true;
+
+        string pathPhoto = null;
 
 
         public AddUserWindow()
@@ -38,6 +42,21 @@ namespace LibraryPetrov_2ISP1117.Windows
         public AddUserWindow(EF.Client client)
         {
             InitializeComponent();
+
+            if (client.Photo != null)
+            {
+                using (MemoryStream stream = new MemoryStream(client.Photo))
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                    bitmapImage.StreamSource = stream;
+                    bitmapImage.EndInit();
+                    imgUser.Source = bitmapImage;
+
+                }
+            }
 
             editClient = client;
 
@@ -144,6 +163,11 @@ namespace LibraryPetrov_2ISP1117.Windows
                     editClient.Address = txtAddress.Text;
                     editClient.GenderID = cmbGender.SelectedIndex + 1;
 
+                    if (pathPhoto != null)
+                    {
+                        editClient.Photo = File.ReadAllBytes(pathPhoto);
+                    }
+
                     AppData.Context.SaveChanges();
                     MessageBox.Show("Данные пользователя успешно изменены", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
@@ -168,6 +192,11 @@ namespace LibraryPetrov_2ISP1117.Windows
                         client.Phone = txtPhone.Text;
                         client.GenderID = cmbGender.SelectedIndex + 1;
 
+                        if (pathPhoto != null)
+                        {
+                            client.Photo = File.ReadAllBytes(pathPhoto);
+                        }
+
                         AppData.Context.Client.Add(client);
                         AppData.Context.SaveChanges();
                         MessageBox.Show("Успех", "Пользователь успешно добавлен", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -191,5 +220,15 @@ namespace LibraryPetrov_2ISP1117.Windows
             }
         }
 
+        private void btnChoosePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imgUser.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+
+                pathPhoto = openFileDialog.FileName;
+            }
+        }
     }
 }

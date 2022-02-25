@@ -21,10 +21,14 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="tbTitle"
                    Text="Добавление Читателей"
-                   FontSize="35"
+                   FontSize="30"
                    HorizontalAlignment="Center"
                    Grid.ColumnSpan="2"
                    />
@@ -122,12 +126,49 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <Button x:Name="btnAdd"
-                Grid.Row="8"
+                Grid.Row="11"
+                Margin="0 0 0 5"
                 Grid.ColumnSpan="2"
                 Height="30"
                 Width="200"
                 Content="Добавить"
                 FontSize="20"
                 Click="btnAdd_Click"/>
+
+        <TextBlock Text="Фото"
+                 FontSize="20"
+                 HorizontalAlignment="Right"
+                 Grid.Row="7"
+                 Margin="0 0 20 0"
+                 Grid.Column="0"
+                 VerticalAlignment="Center"/>
+
+        <Border Grid.Row="7"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="3"
+                Width="100"
+                HorizontalAlignment="Left"
+                Margin="330 0 0 0"
+                Height="100"
+                BorderThickness="2"
+                BorderBrush="LightGray"
+                CornerRadius="10">
+            <Image x:Name="imgUser" 
+                   Source="/LibraryPetrov_2ISP1117;component/Image/userDefault.png"/>
+            
+        </Border>
+
+        <Button x:Name="btnChoosePhoto"
+                Grid.Row="8"
+                Margin="0 0 100 0"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Right"
+                Height="30"
+                Width="200"
+                Content="Выбрать фото"
+                FontSize="20"
+                Click="btnChoosePhoto_Click"/>
+
     </Grid>
 </Window>
