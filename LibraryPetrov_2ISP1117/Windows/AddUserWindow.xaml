@@ -70,7 +70,7 @@
                    Margin="0 0 20 0"/>
         <!-- Вторая колонка -->
         <TextBox x:Name="txtLastName"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="1"
                  Grid.Column="1"
@@ -79,7 +79,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <TextBox x:Name="txtFirstName"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="2"
                  Grid.Column="1"
@@ -88,7 +88,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <ComboBox x:Name="cmbGender"
-                  FontSize="20"
+                  FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="3"
                  Grid.Column="1"
@@ -98,7 +98,7 @@
                  VerticalAlignment="Center"
                  />
         <TextBox x:Name="txtAddress"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="4"
                  Grid.Column="1"
@@ -107,7 +107,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <TextBox x:Name="txtPhone"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="5"
                  Grid.Column="1"
@@ -117,7 +117,7 @@
                  VerticalAlignment="Center"
                  TextChanged="txtPhone_TextChanged"/>
         <TextBox x:Name="txtEmail"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="6"
                  Grid.Column="1"
@@ -126,14 +126,14 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <Button x:Name="btnAdd"
-                Grid.Row="11"
-                Margin="0 0 0 5"
+                Grid.Row="10"
+                Margin="287,23.4,306.6,17"
                 Grid.ColumnSpan="2"
                 Height="30"
                 Width="200"
                 Content="Добавить"
                 FontSize="20"
-                Click="btnAdd_Click"/>
+                Click="btnAdd_Click" Grid.RowSpan="2"/>
 
         <TextBlock Text="Фото"
                  FontSize="20"
@@ -156,7 +156,7 @@
                 CornerRadius="10">
             <Image x:Name="imgUser" 
                    Source="/LibraryPetrov_2ISP1117;component/Image/userDefault.png"/>
-            
+
         </Border>
 
         <Button x:Name="btnChoosePhoto"

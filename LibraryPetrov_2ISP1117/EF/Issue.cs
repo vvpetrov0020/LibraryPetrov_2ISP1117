@@ -11,6 +11,8 @@ namespace LibraryPetrov_2ISP1117.EF
 {
     using System;
     using System.Collections.Generic;
+    using ClassHelper;
+    using EF;
     
     public partial class Issue
     {
@@ -20,6 +22,11 @@ namespace LibraryPetrov_2ISP1117.EF
         public System.DateTime DateIssue { get; set; }
         public System.DateTime DateReturn { get; set; }
         public Nullable<int> WorkerID { get; set; }
+        public decimal LessReturn { get 
+            {
+                Book book = new Book();
+                return (decimal)ClassHelper.LessIssue.Debt(Convert.ToDouble(book.Cost), DateIssue);
+            } set { } }
     
         public virtual Book Book { get; set; }
         public virtual Client Client { get; set; }

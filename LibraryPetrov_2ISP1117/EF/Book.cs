@@ -19,7 +19,6 @@ namespace LibraryPetrov_2ISP1117.EF
         {
             this.Issue = new HashSet<Issue>();
             this.Genre = new HashSet<Genre>();
-            this.Author = new HashSet<Author>();
         }
     
         public int ID { get; set; }
@@ -31,14 +30,14 @@ namespace LibraryPetrov_2ISP1117.EF
         public int SectionID { get; set; }
         public int PublishHouseID { get; set; }
         public bool IsDeleted { get; set; }
+        public decimal Cost { get; set; }
     
+        public virtual Author Author { get; set; }
         public virtual PublishHouse PublishHouse { get; set; }
         public virtual Section Section { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Issue> Issue { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Genre> Genre { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Author> Author { get; set; }
     }
 }

@@ -1,0 +1,194 @@
+﻿<Window x:Class="LibraryPetrov_2ISP1117.Windows.BookIssue"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryPetrov_2ISP1117.Windows"
+        mc:Ignorable="d"
+        Title="BookIssue" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="LightGoldenrodYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <TextBlock Text="Выдача книг"
+                       HorizontalAlignment="Center"
+                       FontSize="35"
+                       FontFamily="Helvetica"
+                       LineHeight="32"
+                       FontStyle="Normal"
+                       FontStretch="Normal"
+                       />
+
+        <WrapPanel Grid.Row="1"
+                   VerticalAlignment="Center">
+            <TextBlock Text="Поиск"
+                       Margin="20 0 10 0"
+                       FontSize="18"
+                       FontFamily="Helvetica"
+                       FontStyle="Normal"
+                       FontStretch="Normal"
+                       />
+
+            <TextBox x:Name="txtSearch"
+                     Width="150"
+                     FontSize="18"
+                     TextChanged="txtSearch_TextChanged"
+                     />
+
+            <ComboBox x:Name="cmbSort"
+                      Width="150"
+                      Margin="20 0 0 0"
+                      SelectionChanged="cmbSort_SelectionChanged"/>
+
+            <TextBlock Text="Дата выдачи"
+                       Margin="20 0 0 0"
+                       FontSize="18"
+                       FontFamily="Helvetica"
+                       FontStyle="Normal"
+                       FontStretch="Normal"/>
+
+            <DatePicker x:Name="dpDateIssue"
+                        Margin="10 0 0 0"
+                        SelectedDateFormat="Short"
+                        IsDropDownOpen="False"/>
+
+            <TextBlock Text="Дата возврата"
+                       Margin="20 0 0 0"
+                       FontSize="18"
+                       FontFamily="Helvetica"
+                       FontStyle="Normal"
+                       FontStretch="Normal"/>
+
+            <DatePicker x:Name="dpDateReturn"
+                        Margin="10 0 0 0"
+                        SelectedDateFormat="Short"
+                        IsDropDownOpen="False"/>
+        </WrapPanel>
+
+        <ListView x:Name="listRentBook"
+                  Grid.Row="3"
+                  KeyUp="listRentBook_KeyUp">
+            <!--<ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Фамилия читателя" Width="Auto" DisplayMemberBinding="{Binding Client.LastName}"/>
+                    <GridViewColumn Header="Имя читателя" Width="Auto" DisplayMemberBinding="{Binding Client.FirstName}"/>
+                    <GridViewColumn Header="Название книги" Width="150" DisplayMemberBinding="{Binding Book.Name}"/>
+                    <GridViewColumn Header="Дата взятие книги" Width="150" DisplayMemberBinding="{Binding DateIssue}"/>
+                    <GridViewColumn Header="Дата возврата книги" Width="Auto" DisplayMemberBinding="{Binding DateReturn}"/>
+                    <GridViewColumn Header="Сумма задолженности" Width="Auto" DisplayMemberBinding="{Binding LessReturn}"/>
+                </GridView>
+            </ListView.View>-->
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="LightSalmon"
+                Height="100"
+                            Width="930"
+                Margin="10"
+                CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Фамилия читателя"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 3 0"
+                           FontSize="20"
+                           Foreground="DarkOliveGreen"/>
+                            <TextBlock Text="Имя читателя"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 3 0"
+                           FontSize="20"
+                           Foreground="DarkOliveGreen"/>
+
+                            <TextBlock Text="Название книги"
+                           Grid.Row="2"
+                           Grid.Column="0"
+                           HorizontalAlignment="Right"
+                           Margin="0 0 3 0"
+                           FontSize="20"
+                           Foreground="DarkOliveGreen"/>
+                            <TextBlock Text="{Binding Path = Client.LastName}"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 0"
+                           FontSize="20"
+                           Foreground="DarkOliveGreen"/>
+                            <TextBlock Text="{Binding Path = Client.FirstName}"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 0"
+                           FontSize="20"
+                           Foreground="DarkOliveGreen"/>
+                            <TextBlock Text="{Binding Path = Book.Name}"
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 0"
+                           FontSize="20"
+                           Foreground="DarkOliveGreen"/>
+                            
+                            <TextBlock Text="{Binding Path = GetDebt}"
+                           Grid.Row="1"
+                           Grid.Column="4"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 0"
+                           FontSize="20"
+                           Foreground="DarkOliveGreen"/>
+                           
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="btnBack"
+                Background="LightSalmon"
+                Content="Назад"
+                Grid.Row="4"
+                Width="100"
+                Height="30"
+                FontFamily="Helvetica"
+                Foreground="#ffffff"
+                HorizontalAlignment="Left"
+                Margin="10 0 0 0"
+                FontSize="20"
+                Click="btnBack_Click"/>
+
+        <Button  x:Name="btnAddRentBook"
+                 Background="LightSalmon"
+                 Content="Добавить"
+                 FontSize="20"
+                 Margin="0 0 10 0"
+                 HorizontalAlignment="Right"
+                 Width="100"
+                 Height="30"
+                 FontFamily="Helvetica"
+                 Foreground="#ffffff"
+                 Grid.Row="4"
+                 Click="btnAddRentBook_Click"/>
+    </Grid>
+</Window>

@@ -34,7 +34,6 @@ namespace LibraryPetrov_2ISP1117.Windows
             BookList.ItemsSource = AppData.Context.Book.ToList();
             BookList.DisplayMemberPath = "LastName";
             AppData.Context.SaveChanges();
-
             Filter();
         }
 
@@ -95,8 +94,9 @@ namespace LibraryPetrov_2ISP1117.Windows
             AddBookWindow addBookWindow = new AddBookWindow();
             this.Opacity = 0.2;
             addBookWindow.ShowDialog();
-            this.Opacity = 1;
             Filter();
+            this.Opacity = 1;
+            
         }
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {

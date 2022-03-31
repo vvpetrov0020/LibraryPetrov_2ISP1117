@@ -85,6 +85,7 @@
                      FontSize="25"
                      TextChanged="txtSearch_TextChanged"/>
             <ComboBox x:Name="cmbSort"
+                      FontSize="15"
                       Width="150"
                       Margin="20 0"
                       SelectionChanged="cmbSort_SelectionChanged"/>

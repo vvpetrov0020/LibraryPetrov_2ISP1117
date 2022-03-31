@@ -73,7 +73,7 @@
                    Margin="0 0 20 0"/>
         <!-- Вторая колонка -->
         <ComboBox x:Name="cmbFirstName"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="1"
                  Grid.Column="1"
@@ -82,7 +82,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <ComboBox x:Name="cmbLastName"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="2"
                  Grid.Column="1"
@@ -91,7 +91,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <TextBox x:Name="txtNameBook"
-                  FontSize="20"
+                  FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="3"
                  Grid.Column="1"
@@ -100,7 +100,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <ComboBox x:Name="cmbSection"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="7"
                  Grid.Column="1"
@@ -109,7 +109,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <TextBox x:Name="txtDateRelease"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="4"
                  Grid.Column="1"
@@ -127,7 +127,7 @@
                  Margin="20 0 0 0"
                  VerticalAlignment="Center"/>
         <ComboBox x:Name="cmbPublishHouse"
-                 FontSize="20"
+                 FontSize="15"
                  HorizontalAlignment="Left"
                  Grid.Row="6"
                  Grid.Column="1"

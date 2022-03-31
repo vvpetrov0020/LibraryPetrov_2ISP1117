@@ -9,6 +9,6 @@ namespace LibraryPetrov_2ISP1117.ClassHelper
 {
     class AppData
     {
-        public static EF.Entities Context { get; } = new EF.Entities();
+        public static EF.LibraryPetrovEntities Context { get; } = new EF.LibraryPetrovEntities();
     }
 }

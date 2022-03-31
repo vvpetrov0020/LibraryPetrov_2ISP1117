@@ -29,7 +29,9 @@ namespace LibraryPetrov_2ISP1117
 
         private void btnBookIssue_Click(object sender, RoutedEventArgs e)
         {
-
+            BookIssue bookIssue = new BookIssue();
+            bookIssue.ShowDialog();
+            this.Close();
         }
 
         private void btnUserList_Click(object sender, RoutedEventArgs e)

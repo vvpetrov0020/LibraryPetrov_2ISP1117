@@ -28,11 +28,14 @@
                        Foreground="DarkOliveGreen"/>
             <TextBox x:Name="txtSearch"
                      Width="200"
-                     FontSize="25"/>
+                     FontSize="25"
+                     TextChanged="txtSearch_TextChanged"/>
             <ComboBox x:Name="cmbSort"
+                      FontSize="15"
                       Width="150"
                       Margin="20 0"
-                      Background="LightCoral"/>
+                      Background="LightCoral"
+                      SelectionChanged="cmbSort_SelectionChanged"/>
             <Button x:Name="btnAddBook" Grid.Row="4"
                 Width="170"
                 HorizontalAlignment="Center"
@@ -51,7 +54,7 @@
                   MouseDoubleClick="BookList_MouseDoubleClick">
             <ListView.View >
                 <GridView >
-                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding ID}"/>
                     <GridViewColumn Header="Автор" Width="100" DisplayMemberBinding="{Binding Author.LastName}"/>
                     <GridViewColumn Header="Название" Width="100" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Дата выхода" Width="100" DisplayMemberBinding="{Binding DateRelease}"/>

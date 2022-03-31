@@ -4,17 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="eff54122175649019f3647d4fb045c64" Name="Diagram1">
-        <EntityTypeShape EntityType="LibraryPetrovModel.Author" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+      <Diagram DiagramId="fbeda5d26c5b411584e53b60a64d2ccf" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryPetrovModel.Author" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryPetrovModel.Book" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryPetrovModel.Client" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryPetrovModel.Gender" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryPetrovModel.Client" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryPetrovModel.Gender" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryPetrovModel.Genre" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryPetrovModel.Issue" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryPetrovModel.PublishHouse" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryPetrovModel.Section" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryPetrovModel.PublishHouse" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryPetrovModel.Section" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryPetrovModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryPetrovModel.Worker" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryPetrovModel.Worker" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <AssociationConnector Association="LibraryPetrovModel.FK_Book_Author" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryPetrovModel.FK_Book_PublishHouse" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryPetrovModel.FK_Book_Section" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryPetrovModel.FK_Issue_Book" ManuallyRouted="false" />
@@ -22,7 +23,6 @@
         <AssociationConnector Association="LibraryPetrovModel.FK_Issue_Client" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryPetrovModel.FK_Issue_Worker" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryPetrovModel.BookGenre" ManuallyRouted="false" />
-        <AssociationConnector Association="LibraryPetrovModel.BookAuthor" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
