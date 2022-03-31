@@ -107,5 +107,30 @@ namespace Library_Petrov_TestMethod_Debt
             //assert
             Assert.AreEqual(ex, res);
         }
+        [TestMethod]
+        public void TenYearsDate()
+        {
+            //arrange
+            DateTime dateStart = new DateTime(2012, 03, 31);
+            double price = 100;
+            double ex = 3622;
+            //act
+            double res = LibraryPetrov_2ISP1117.ClassHelper.LessIssue.Debt(price, dateStart);
+            //assert
+            Assert.AreEqual(ex, res);
+        }
+
+        [TestMethod]
+        public void LastThousand()
+        {
+            //arrange
+            DateTime dateStart = new DateTime(1990, 03, 31);
+            double price = 100;
+            double ex = 11658;
+            //act
+            double res = LibraryPetrov_2ISP1117.ClassHelper.LessIssue.Debt(price, dateStart);
+            //assert
+            Assert.AreEqual(ex, res);
+        }
     }
 }
