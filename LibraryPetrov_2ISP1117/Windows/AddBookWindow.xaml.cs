@@ -73,7 +73,6 @@ namespace LibraryPetrov_2ISP1117.Windows
             cmbFirstName.SelectedIndex = editBook.AuthorID - 1;
             cmbSection.SelectedIndex = editBook.SectionID - 1;
             cmbPublishHouse.SelectedIndex = editBook.PublishHouseID;
-            txtDateRelease.Text = editBook.DateRelease.ToString();
             txtNumberPages.Text = editBook.PageQty.ToString();
            
             isEdit = true;
