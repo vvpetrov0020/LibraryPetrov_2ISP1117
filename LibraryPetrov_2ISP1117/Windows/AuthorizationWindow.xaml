@@ -40,7 +40,7 @@
                      Margin="80 10 80 10"/>
         <Button x:Name="btnSubmit"
                 Grid.Row="6"
-                Content="Submit"
+                Content="Войти"
                 FontSize="20"
                 Margin="150,15,149,13"
                 Background="LightSalmon"

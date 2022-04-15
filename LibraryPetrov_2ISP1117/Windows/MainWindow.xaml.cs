@@ -24,7 +24,6 @@ namespace LibraryPetrov_2ISP1117
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         private void btnBookIssue_Click(object sender, RoutedEventArgs e)
@@ -45,6 +44,13 @@ namespace LibraryPetrov_2ISP1117
         {
             BookListWindow bookListWindow = new BookListWindow();
             bookListWindow.Show();
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            this.Close();
         }
     }
 }

@@ -50,7 +50,7 @@ namespace LibraryPetrov_2ISP1117.Windows
             InitializeComponent();
 
             editBook = book;
-            //add combobox
+           
             cmbSection.ItemsSource = AppData.Context.Section.ToList();
             cmbSection.DisplayMemberPath = "SectionName";
 
@@ -63,11 +63,11 @@ namespace LibraryPetrov_2ISP1117.Windows
             cmbFirstName.ItemsSource = AppData.Context.Author.ToList();
             cmbFirstName.DisplayMemberPath = "FirstName";
 
-            //edit Title and content into button
+            
             tbTitle.Text = "Изменения данных о книге";
             btnAdd.Content = "Изменить";
 
-            //get value
+            
             txtNameBook.Text = editBook.Name;
             cmbLastName.SelectedIndex = editBook.AuthorID - 1;
             cmbFirstName.SelectedIndex = editBook.AuthorID - 1;

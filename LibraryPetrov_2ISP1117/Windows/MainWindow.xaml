@@ -48,5 +48,12 @@
                 Margin="44.6,68.6,83.6,70.8"
                 Background="LightSalmon"
                 Click="btnBookIssue_Click"/>
+        <Button x:Name="btnExit"
+                Grid.Row="2"
+                FontSize="17"
+                Content="Выход"
+                Margin="80 130 65 10"
+                Background="LightSalmon"
+                Click="btnExit_Click"  Grid.Column="1"/>
     </Grid>
 </Window>

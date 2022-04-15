@@ -17,19 +17,18 @@ using LibraryPetrov_2ISP1117.EF;
 
 namespace LibraryPetrov_2ISP1117.Windows
 {
-    /// <summary>
-    /// Логика взаимодействия для AddEditIssueBook.xaml
-    /// </summary>
+
     public partial class AddEditIssueBook : Window
     {
         EF.Issue editBookIssue = new EF.Issue();
+        bool isEdit = true;
 
         public AddEditIssueBook()
         {
             InitializeComponent();
 
             cmbBook.ItemsSource = AppData.Context.Book.ToList();
-            cmbBook.DisplayMemberPath = "Title";
+            cmbBook.DisplayMemberPath = "Name";
             cmbBook.SelectedIndex = 0;
 
             cmbReader.ItemsSource = AppData.Context.Client.ToList();
@@ -40,7 +39,41 @@ namespace LibraryPetrov_2ISP1117.Windows
             cmbEmployer.DisplayMemberPath = "LastName";
             cmbEmployer.SelectedIndex = 0;
 
+            
+
         }
+
+        public AddEditIssueBook(EF.Issue bookIssue)
+        {
+            InitializeComponent();
+
+            cmbBook.ItemsSource = AppData.Context.Book.ToList();
+            cmbBook.DisplayMemberPath = "Title";
+
+            cmbReader.ItemsSource = AppData.Context.Client.ToList();
+            cmbReader.DisplayMemberPath = "LastName";
+
+            cmbEmployer.ItemsSource = AppData.Context.Worker.ToList();
+            cmbEmployer.DisplayMemberPath = "LastName";
+
+
+           
+            editBookIssue = bookIssue;
+
+            cmbBook.SelectedIndex = bookIssue.BookID - 1;
+            cmbReader.SelectedIndex = bookIssue.ClientID - 1;
+            dtDateStart.SelectedDate = bookIssue.DateIssue;
+            dtDateEnd.SelectedDate = bookIssue.DateReturn;
+            if (cmbEmployer.SelectedIndex == (int)bookIssue.WorkerID)
+            {
+                cmbEmployer.SelectedIndex = (int)bookIssue.WorkerID - 1;
+            }
+
+
+            isEdit = true;
+        }
+
+
 
         private void btnAddIssueBook_Click(object sender, RoutedEventArgs e)
         {
@@ -49,7 +82,7 @@ namespace LibraryPetrov_2ISP1117.Windows
                 var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите добавление", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (resultClick == MessageBoxResult.Yes)
                 {
-                    //Добавление нового читателя
+                    
                     EF.Issue bookIssue = new EF.Issue();
                     bookIssue.BookID = cmbBook.SelectedIndex + 1;
                     bookIssue.ClientID = cmbReader.SelectedIndex + 1;

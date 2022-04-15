@@ -90,7 +90,7 @@
                    VerticalAlignment="Center"/>
 
 
-        <!--Правая часть с возможностью ввода-->
+        
         <ComboBox x:Name="cmbBook"
                  HorizontalAlignment="Left"
                  Margin="10 0 0 0"

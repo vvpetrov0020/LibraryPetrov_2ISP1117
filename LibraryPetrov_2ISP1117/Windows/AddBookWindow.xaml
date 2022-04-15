@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryPetrov_2ISP1117.Windows"
         mc:Ignorable="d"
-        Title="AddBookWindow" Height="450" Width="800">
+        Title="AddBookWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid Background="LightGoldenrodYellow">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -71,7 +72,7 @@
                    VerticalAlignment="Center"
                    Grid.Row="6"
                    Margin="0 0 20 0"/>
-        <!-- Вторая колонка -->
+        
         <ComboBox x:Name="cmbFirstName"
                  FontSize="15"
                  HorizontalAlignment="Left"
